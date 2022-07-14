@@ -1,0 +1,28 @@
+<div class="position-absolute start-50 translate-middle-x" *ngIf="hero">
+    <h2 *ngIf="!hero.id">
+        {{hero.name}}
+    </h2>
+    <div class="input-group">
+        <span class="input-group-text">Name</span>
+        <input type="text" [(ngModel)]="hero.name" />
+    </div>
+    <br>
+    <div class="input-group">
+        <span class="input-group-text">First Name</span>
+        <input type="text" [(ngModel)]="hero.firstName" />
+        <span class="input-group-text">Last Name</span>
+        <input type="text" [(ngModel)]="hero.lastName" />
+    </div>
+    <br>
+    <div class="input-group">
+        <span class="input-group-text">Place</span>
+        <input type="text" [(ngModel)]="hero.place" />
+    </div>
+    <br>
+    <div class="position-relative">
+        <button type="button" class="btn btn-primary position-relative" (click)="createHero(hero)" *ngIf="!hero.id">Create</button>
+        <button type="button" class="btn btn-warning position-absolute start-50" (click)="updateHero(hero)" *ngIf="hero.id">Update</button>
+        <button type="button" class="btn btn-danger position-absolute start-60" (click)="deleteHero(hero)" *ngIf="hero.id">Delete</button>
+    </div>
+
+</div>
